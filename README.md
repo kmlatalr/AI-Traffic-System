@@ -21,7 +21,7 @@ The core innovation of this project is the **Data Fusion** of audio and visual i
 ```mermaid
 graph TD
     subgraph "Sensory Input Layer"
-        Mic[Acoustic Sensors] -->|Raw Audio Stream| PreProcess[Noise Cancellation & Normalization]
+        Mic[Acoustic Sensors] -->|Raw Audio Stream| PreProcess["Noise Cancellation & Normalization"]
         Cam[Camera Feed] -->|Video Stream| VisionInput[Frame Capture]
     end
 
@@ -29,7 +29,7 @@ graph TD
         PreProcess -->|Extract Features| MFCC[MFCC Feature Extraction]
         MFCC -->|Input| AudioAI[Audio CNN Model]
         
-        VisionInput -->|Input| YOLO[Object Detection Model (TensorFlow)]
+        VisionInput -->|Input| YOLO["Object Detection Model (TensorFlow)"]
         
         AudioAI -- "Siren Detected? (Probability > 0.8)" --> FusionEngine{Decision Fusion Engine}
         YOLO -- "Ambulance Visual Confirmed?" --> FusionEngine
